@@ -1,0 +1,13 @@
+.Menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.Menu > .active {
+    color: white;
+    font-weight: bold;
+    font-family: "Lucida Handwriting";
+}
+
