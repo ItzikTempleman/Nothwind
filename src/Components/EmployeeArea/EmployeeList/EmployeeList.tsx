@@ -10,8 +10,8 @@ export function EmployeeList() {
 
     useEffect(() => {
         employeeService.getAllEmployees()
-            .then(dbProduct=>
-                setEmployees(dbProduct)
+            .then(dbEmployee=>
+                setEmployees(dbEmployee)
             ).catch(err=>console.log(err.message));
     }, []);
 

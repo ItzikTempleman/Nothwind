@@ -16,8 +16,13 @@ export function AddProduct() {
             await productService.addProduct(product);
             alert("Product has been added.");
             navigate("/products")
-        } catch (err: any) {
-            alert(err.message);
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                console.error("❌ Backend error:", err.message);
+            } else {
+                console.error("❌ Unknown error occurred:", err);
+            }
+            throw err;
         }
     }
 
