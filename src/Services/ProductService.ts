@@ -42,6 +42,10 @@ class ProductService {
         const dbProduct = response.data;
         console.log(dbProduct);
     }
+
+    public async deleteProduct(id:number):Promise<void>{
+        await axios.delete(appConfig.productsUrl +id)
+    }
 }
 
 export const productService = new ProductService();
