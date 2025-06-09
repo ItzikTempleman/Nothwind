@@ -2,18 +2,29 @@
     height: 100%;
     box-sizing: border-box;
     display: grid;
-    grid-template-rows: 10% 85% 5%;
-    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 15% 85%;
+}
+
+.Layout>h1,h2,h3,h4,h5,h6,p,a {
+    font-family: Arial;
 }
 
 header, footer {
     grid-column: span 2;
 }
 
- header, aside, main, footer {
-    border: 0.5px solid black;
+header, aside, main, footer{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 6px;
+    background-color: white;
 }
-
  main{
      overflow: auto;
  }
+
+aside{
+    background-image: linear-gradient(45deg, white, #cbd6e1, #919da8);
+}

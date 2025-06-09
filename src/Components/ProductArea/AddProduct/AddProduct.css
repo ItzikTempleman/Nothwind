@@ -1,3 +1,12 @@
 .AddProduct {
-	
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: white;
+}
+
+.AddProduct > form > * {
+
+margin:10px auto;
+    background-color: white;
 }

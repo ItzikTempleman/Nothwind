@@ -1,3 +1,8 @@
-.ContactUs {
-	
+.ContactUs > form{
+	width: 400px;
+    background-color: white;
+}
+
+.ContactUs > form>*{
+    margin-bottom: 20px;
 }

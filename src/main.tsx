@@ -7,11 +7,8 @@ import {Layout} from "./Components/Layout/Layout.tsx";
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-
-        {/* BrowserRouter managing entire routing */}
         <BrowserRouter>
             <Layout />
         </BrowserRouter>
-
     </StrictMode>
 )

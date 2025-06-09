@@ -4,13 +4,18 @@ import {Home} from "../../PageArea/Home/Home";
 import {ProductList} from "../../ProductArea/ProductList/ProductList";
 import "./Routing.css";
 import {Page404} from "../../PageArea/Page404/Page404";
-import {ContactUs} from "../../PageArea/ContactUs/ContactUs";
 import {ProductDetails} from "../../ProductArea/ProductDetails/ProductDetails";
 import {AddProduct} from "../../ProductArea/AddProduct/AddProduct";
 import {EmployeeList} from "../../EmployeeArea/EmployeeList/EmployeeList.tsx";
 import {EditProduct} from "../../ProductArea/EditProduct/EditProduct.tsx";
+import {lazy, Suspense} from "react";
+
 
 export function Routing() {
+
+
+    const LazyContactUs = lazy(() => import("../../PageArea/ContactUs/ContactUs"))
+    const SuspenseContactUs = <Suspense><LazyContactUs/></Suspense>
     return (
         <div className="Routing">
             <Routes>
@@ -22,7 +27,7 @@ export function Routing() {
                 <Route path="/products/new" element={<AddProduct/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="products/edit/:id" element={<EditProduct/>}/>
-                <Route path="/contact-us" element={<ContactUs/>}/>
+                <Route path="/contact-us" element={SuspenseContactUs}/>
                 <Route path="*" element={<Page404/>}/>
             </Routes>
         </div>

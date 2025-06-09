@@ -5,6 +5,7 @@ import "./AddProduct.css";
 import {useNavigate} from "react-router-dom";
 import {notify} from "../../../Utils/Notify.ts";
 import {useTitle} from "../../../Utils/UseTitle.ts";
+import {Button, TextField} from "@mui/material";
 
 export function AddProduct() {
     useTitle("Add product")
@@ -28,19 +29,16 @@ export function AddProduct() {
 
             <form onSubmit={handleSubmit(send)}>
 
-                <label>Name: </label>
-                <input type="text" {...register("name")} />
+                <TextField label="Name" placeholder="Enter item title" fullWidth {...register("name")}/>
 
-                <label>Price: </label>
-                <input type="number" step="0.01" {...register("price")} />
+                <TextField label="price" placeholder="Price in ₪" fullWidth type="number" {...register("price")}/>
 
-                <label>Stock: </label>
-                <input type="number" {...register("stock")} />
+                <TextField label="stock" placeholder="Anount in stock?" fullWidth type="number" {...register("stock")}/>
 
-                <label>Image: </label>
-                <input type="file" accept="image/*" {...register("image")}/>
+                <TextField type="file" fullWidth inputProps={{ accept: "image/*" }} {...register("image")}/>
 
-                <button>Add</button>
+
+                <Button color="primary">Add</Button>
 
             </form>
 

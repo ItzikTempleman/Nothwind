@@ -1,13 +1,36 @@
 .Menu {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    gap: 10px;
+    padding-top: 20px;
+    align-items: center;
 }
 
-.Menu > .active {
-    color: white;
+.nav-link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.nav-link.active {
+    color: #455b85;
+    font-size: 14px;
     font-weight: bold;
-    font-family: "Lucida Handwriting";
 }
 
+.menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial;
+    font-size: 20px;
+    color: rgba(101, 101, 101, 0.84);
+    margin-bottom: 60px;
+}
+
+.menu-header i {
+    font-size: 20px;
+}
