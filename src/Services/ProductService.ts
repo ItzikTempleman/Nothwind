@@ -28,6 +28,20 @@ class ProductService {
         const dbProduct = response.data;
         console.log(dbProduct);
     }
+
+
+    public async updateProduct(product: ProductModel): Promise<void> {
+
+        const options:AxiosRequestConfig={
+            headers:{
+                "Content-Type": "multipart/form-data"
+            }
+        }
+
+        const response = await axios.post<ProductModel>(appConfig.productsUrl, product, options);
+        const dbProduct = response.data;
+        console.log(dbProduct);
+    }
 }
 
 export const productService = new ProductService();

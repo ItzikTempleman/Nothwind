@@ -1,15 +1,11 @@
 import "./ProductDetails.css";
-import {useNavigate, useParams} from "react-router-dom"
+import {NavLink, useParams} from "react-router-dom"
 import {useEffect, useState} from "react";
 import type {ProductModel} from "../../../Models/ProductModel.ts";
 import {productService} from "../../../Services/ProductService.ts";
 
 
 export function ProductDetails() {
-    const navigate = useNavigate()
-    function returnToProducts() {
-        navigate("/products/");
-    }
 
     const params = useParams();
     const id = +params.id!;
@@ -30,7 +26,9 @@ export function ProductDetails() {
             <img src={product?.imageUrl} alt={product?.imageUrl}/>
             <br/>
             <br/>
-            <button onClick={returnToProducts}>Back</button>
+            <NavLink to="/products"> Back</NavLink>
+            <span> | </span>
+            <NavLink to={"/edit/"+product?.id}> Edit</NavLink>
         </div>
     );
 }

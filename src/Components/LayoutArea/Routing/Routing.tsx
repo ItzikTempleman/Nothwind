@@ -8,6 +8,7 @@ import {ContactUs} from "../../PageArea/ContactUs/ContactUs";
 import {ProductDetails} from "../../ProductArea/ProductDetails/ProductDetails";
 import {AddProduct} from "../../ProductArea/AddProduct/AddProduct";
 import {EmployeeList} from "../../EmployeeArea/EmployeeList/EmployeeList.tsx";
+import {EditProduct} from "../../ProductArea/EditProduct/EditProduct.tsx";
 
 export function Routing() {
     return (
@@ -20,6 +21,7 @@ export function Routing() {
                 <Route path="/products/:id" element={<ProductDetails/>}/>
                 <Route path="/products/new" element={<AddProduct/>}/>
                 <Route path="/about" element={<About/>}/>
+                <Route path="/edit/:id" element={<EditProduct/>}/>
                 <Route path="/contact-us" element={<ContactUs/>}/>
                 <Route path="*" element={<Page404/>}/>
             </Routes>
