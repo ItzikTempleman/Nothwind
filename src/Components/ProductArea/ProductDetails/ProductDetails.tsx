@@ -3,6 +3,7 @@ import {NavLink, useNavigate, useParams} from "react-router-dom"
 import {useEffect, useState} from "react";
 import type {ProductModel} from "../../../Models/ProductModel.ts";
 import {productService} from "../../../Services/ProductService.ts";
+import {notify} from "../../../Utils/Notify.ts";
 
 
 export function ProductDetails() {
@@ -22,15 +23,10 @@ export function ProductDetails() {
             const sure = confirm("Are you sure?")
             if (!sure) return
             await productService.deleteProduct(id)
-            alert("product has been deleted")
+            notify.success("product has been deleted")
             navigate("/products")
-        } catch (err: unknown) {
-            if (err instanceof Error) {
-                console.error("❌ Backend error:", err.message);
-            } else {
-                console.error("❌ Unknown error occurred:", err);
-            }
-            throw err;
+        }  catch (err: any){
+            notify.error(err);
         }
     }
 

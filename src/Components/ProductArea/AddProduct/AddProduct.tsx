@@ -3,6 +3,7 @@ import {ProductModel} from "../../../Models/ProductModel";
 import {productService} from "../../../Services/ProductService";
 import "./AddProduct.css";
 import {useNavigate} from "react-router-dom";
+import {notify} from "../../../Utils/Notify.ts";
 
 export function AddProduct() {
 
@@ -14,15 +15,10 @@ export function AddProduct() {
             product.image = (product.image as unknown as FileList)[0];
 
             await productService.addProduct(product);
-            alert("Product has been added.");
+            notify.success("Product has been added.");
             navigate("/products")
-        } catch (err: unknown) {
-            if (err instanceof Error) {
-                console.error("❌ Backend error:", err.message);
-            } else {
-                console.error("❌ Unknown error occurred:", err);
-            }
-            throw err;
+        } catch (err: any) {
+            notify.error(err);
         }
     }
 

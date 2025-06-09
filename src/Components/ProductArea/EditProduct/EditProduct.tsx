@@ -4,6 +4,7 @@ import {ProductModel} from "../../../Models/ProductModel.ts";
 import {useNavigate, useParams} from "react-router-dom";
 import {productService} from "../../../Services/ProductService.ts";
 import {useEffect, useState} from "react";
+import {notify} from "../../../Utils/Notify.ts";
 
 export function EditProduct() {
 
@@ -29,15 +30,10 @@ export function EditProduct() {
             product.image = (product.image as unknown as FileList)[0];
             product.id = id
             await productService.updateProduct(product);
-            alert("Product has been updated");
+            notify.success("Product has been updated");
             navigate("/products/" + product.id)
-        } catch (err: unknown) {
-            if (err instanceof Error) {
-                console.error("❌ Backend error:", err.message);
-            } else {
-                console.error("❌ Unknown error occurred:", err);
-            }
-            throw err;
+        } catch (err: any){
+            notify.error(err);
         }
     }
 

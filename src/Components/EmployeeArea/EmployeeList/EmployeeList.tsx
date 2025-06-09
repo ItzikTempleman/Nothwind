@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import type {EmployeeModel} from "../../../Models/EmployeeModel.ts";
 import {employeeService} from "../../../Services/EmployeeService.ts";
 import {EmployeeCard} from "../EmployeeCard/EmployeeCard.tsx";
+import {notify} from "../../../Utils/Notify.ts";
 
 export function EmployeeList() {
 
@@ -12,7 +13,7 @@ export function EmployeeList() {
         employeeService.getAllEmployees()
             .then(dbEmployee=>
                 setEmployees(dbEmployee)
-            ).catch(err=>console.log(err.message));
+            ).catch(err=>  notify.error(err));
     }, []);
 
 
