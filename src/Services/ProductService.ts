@@ -38,7 +38,7 @@ class ProductService {
             }
         }
 
-        const response = await axios.post<ProductModel>(appConfig.productsUrl, product, options);
+        const response = await axios.put<ProductModel>(appConfig.productsUrl +product.id, product, options);
         const dbProduct = response.data;
         console.log(dbProduct);
     }

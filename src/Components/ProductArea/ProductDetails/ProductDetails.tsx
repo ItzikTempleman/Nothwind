@@ -28,7 +28,7 @@ export function ProductDetails() {
             <br/>
             <NavLink to="/products"> Back</NavLink>
             <span> | </span>
-            <NavLink to={"/edit/"+product?.id}> Edit</NavLink>
+            <NavLink to={"/products/edit/"+product?.id}> Edit</NavLink>
         </div>
     );
 }
