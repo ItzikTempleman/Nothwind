@@ -1,11 +1,12 @@
 import "./About.css";
 import {useTitle} from "../../../Utils/UseTitle.ts";
+import {Music} from "../../SharedArea/Music/Music.tsx";
 
 export function About() {
-    useTitle("About Page")
+    useTitle("About")
     return (
         <div className="About">
-			<p>About Component</p>
+			<Music/>
         </div>
     );
 }

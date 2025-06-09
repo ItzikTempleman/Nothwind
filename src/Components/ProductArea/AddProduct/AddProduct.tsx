@@ -7,7 +7,7 @@ import {notify} from "../../../Utils/Notify.ts";
 import {useTitle} from "../../../Utils/UseTitle.ts";
 
 export function AddProduct() {
-    useTitle("Add product Page")
+    useTitle("Add product")
     const {register, handleSubmit} = useForm<ProductModel>();
     const navigate = useNavigate();
 

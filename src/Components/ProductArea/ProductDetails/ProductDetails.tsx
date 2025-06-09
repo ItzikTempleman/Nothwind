@@ -4,11 +4,12 @@ import {useEffect, useState} from "react";
 import type {ProductModel} from "../../../Models/ProductModel.ts";
 import {productService} from "../../../Services/ProductService.ts";
 import {notify} from "../../../Utils/Notify.ts";
+import {useTitle} from "../../../Utils/UseTitle.ts";
 
 
 
 export function ProductDetails() {
-
+useTitle("Details")
     const params = useParams();
     const id = +params.id!;
     const [product, setProduct] = useState<ProductModel>()
