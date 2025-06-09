@@ -6,6 +6,7 @@ import {productService} from "../../../Services/ProductService.ts";
 import {notify} from "../../../Utils/Notify.ts";
 
 
+
 export function ProductDetails() {
 
     const params = useParams();

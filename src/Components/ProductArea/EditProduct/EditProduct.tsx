@@ -5,9 +5,10 @@ import {useNavigate, useParams} from "react-router-dom";
 import {productService} from "../../../Services/ProductService.ts";
 import {useEffect, useState} from "react";
 import {notify} from "../../../Utils/Notify.ts";
+import {useTitle} from "../../../Utils/UseTitle.ts";
 
 export function EditProduct() {
-
+useTitle("Edit product")
     const [image, setImage]=useState("")
     const {register, handleSubmit, setValue, formState: { isValid }} = useForm<ProductModel>();//use a form library for handling a form
     const navigate = useNavigate();//useNavigate for navigation

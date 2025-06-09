@@ -1,7 +1,9 @@
 import "./Page404.css";
 import {NavLink} from "react-router-dom";
+import {useTitle} from "../../../Utils/UseTitle.ts";
 
 export function Page404() {
+    useTitle("Page not found")
     return (
         <div className="Page404">
             <h1>404</h1>

@@ -4,9 +4,10 @@ import {productService} from "../../../Services/ProductService";
 import "./AddProduct.css";
 import {useNavigate} from "react-router-dom";
 import {notify} from "../../../Utils/Notify.ts";
+import {useTitle} from "../../../Utils/UseTitle.ts";
 
 export function AddProduct() {
-
+    useTitle("Add product Page")
     const {register, handleSubmit} = useForm<ProductModel>();
     const navigate = useNavigate();
 

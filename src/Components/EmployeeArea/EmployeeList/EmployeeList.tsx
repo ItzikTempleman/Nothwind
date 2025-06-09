@@ -4,9 +4,10 @@ import type {EmployeeModel} from "../../../Models/EmployeeModel.ts";
 import {employeeService} from "../../../Services/EmployeeService.ts";
 import {EmployeeCard} from "../EmployeeCard/EmployeeCard.tsx";
 import {notify} from "../../../Utils/Notify.ts";
+import {useTitle} from "../../../Utils/UseTitle.ts";
 
 export function EmployeeList() {
-
+    useTitle("Employees")
     const [employees, setEmployees]= useState<EmployeeModel[]>([]);
 
     useEffect(() => {
