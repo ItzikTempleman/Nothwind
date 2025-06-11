@@ -6,18 +6,20 @@ function initProducts(_: ProductModel[], payloadAction: PayloadAction<ProductMod
 }
 
 //The entire data to handle in this slice is Northwind entire list of products. Therefore, we use an array
-//Reducers
+// Reducers to
 //Add new product
 
 function addProduct(currentState: ProductModel[], action: PayloadAction<ProductModel>): ProductModel[] {
-    //Duplicate currentState to a new state
-    const newState = [...currentState];
-    //Take product to add (payload)
-    const productToAdd = action.payload;
-    //Add product to newState
-    newState.push(productToAdd);
-    //Return the newState. Redux will replace currentState with the newState and will report the change to all components that are listening
-    return newState;
+    // //Duplicate currentState to a new state
+    // const newState = [...currentState];
+    // //Take product to add (payload)
+    // const productToAdd = action.payload;
+    // //Add product to newState
+    // newState.push(productToAdd);
+    // //Return the newState.
+    // Redux will replace currentState with the newState and will report the change to all relevant components
+    // return newState;
+    return [...currentState, action.payload];
 }
 
 function updateProduct(currentState: ProductModel[], action: PayloadAction<ProductModel>): ProductModel[] {

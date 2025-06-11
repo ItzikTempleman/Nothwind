@@ -25,6 +25,8 @@ export function ProductList() {
             {
                 products.map(p => <ProductCard key={p.id} product={p}/>)
             };
+            {/*<NavLink to="products/total" className="nav-link">All products</NavLink>*/}
         </div>
+
     );
 }
