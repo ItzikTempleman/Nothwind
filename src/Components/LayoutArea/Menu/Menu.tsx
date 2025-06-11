@@ -11,6 +11,7 @@ export function Menu() {
             <NavLink to="/products/new" className="nav-link"><i className="bi bi-plus-lg"></i>Add</NavLink>
             <NavLink to="/employees" className="nav-link"><i className="bi bi-people"></i>Employees</NavLink>
             <NavLink to="/about" className="nav-link"><i className="bi bi-info-lg"></i>About</NavLink>
+            <NavLink to="products/total" className="nav-link">All products</NavLink>
             <NavLink to="/contact-us" className="nav-link"><i className="bi bi-person-rolodex"></i>Contact</NavLink>
         </div>
     );

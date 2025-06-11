@@ -6,11 +6,12 @@ import {productService} from "../../../Services/ProductService.ts";
 import {useEffect, useState} from "react";
 import {notify} from "../../../Utils/Notify.ts";
 import {useTitle} from "../../../Utils/UseTitle.ts";
+import {Button, TextField} from "@mui/material";
 
 export function EditProduct() {
     useTitle("Edit product");
     const [image, setImage] = useState("");
-    const {register, handleSubmit, setValue, formState: {isValid}} = useForm<ProductModel>();//use a form library for handling a form
+    const {register, handleSubmit, setValue} = useForm<ProductModel>();//use a form library for handling a form
     const navigate = useNavigate();//useNavigate for navigation
     const params = useParams() //useParams for taking the route parameter :id
     const id = +params.id! //Take the route parameter :id
@@ -43,23 +44,90 @@ export function EditProduct() {
         <div className="EditProduct">
             <form onSubmit={handleSubmit(send)}>
 
-                <label>Name: </label>
-                <input type="text" {...register("name")} required minLength={2} maxLength={100}/>
+                <TextField
+                    label="Name"
+                    fullWidth
+                    inputProps={{minLength: 2, maxLength: 30}}
+                    required
+                    placeholder="Name"
+                    {
+                        ...register("name")
+                    }/>
 
-                <label>Price: </label>
-                <input type="number" step="0.01" {...register("price")} required minLength={0} maxLength={100}/>
+                <TextField
+                    label="Price"
+                    fullWidth
+                    inputProps={{minLength: 2, maxLength: 30}}
+                    required
+                    placeholder="Price"
+                    {
+                        ...register("price")
+                    }/>
 
-                <label>Stock: </label>
-                <input type="number" {...register("stock")} required minLength={0} maxLength={100}/>
+                <TextField
+                    label="Stock"
+                    fullWidth
+                    inputProps={{minLength: 5, maxLength: 20}}
+                    required
+                    placeholder="Stock"
+                    {
+                        ...register("stock")
+                    }/>
 
-                <label>Image: </label>
-                <input type="file" accept="image/*" {...register("image")}/>
+
 
                 <img src={image}/>
 
-                <button type="submit" disabled={!isValid}>Update</button>
 
+                <TextField
+                    variant="standard"
+                    InputProps={{disableUnderline: true}}
+                    type="file"
+                    fullWidth
+                    inputProps={
+                        {accept: "image/*"}
+                    }  {
+
+                        ...register("image")
+                    }
+                    onChange={(it) => {
+                        const target = it.target as HTMLInputElement;
+                        const file = target.files?.[0];
+                        if (file) {
+                            setImage(URL.createObjectURL(file));
+                        }
+                    }
+                    }/>
+
+                <Button
+                    type="submit"
+                    color="primary"
+                    fullWidth
+                    variant="contained"
+                >Update product</Button>
             </form>
+
         </div>
     );
 }
+
+
+//            {/*<form onSubmit={handleSubmit(send)}>*/}
+//
+//             {/*    <label>Name: </label>*/}
+//             {/*    <input type="text" {...register("name")} required minLength={2} maxLength={100}/>*/}
+//
+//             {/*    <label>Price: </label>*/}
+//             {/*    <input type="number" step="0.01" {...register("price")} required minLength={0} maxLength={100}/>*/}
+//
+//             {/*    <label>Stock: </label>*/}
+//             {/*    <input type="number" {...register("stock")} required minLength={0} maxLength={100}/>*/}
+//
+//             {/*    <label>Image: </label>*/}
+//             {/*    <input type="file" accept="image/*" {...register("image")}/>*/}
+//
+//             {/*    <img src={image}/>*/}
+//
+//             {/*    <button type="submit" disabled={!isValid}>Update</button>*/}
+//
+//             {/*</form>*/}

@@ -9,6 +9,7 @@ import {AddProduct} from "../../ProductArea/AddProduct/AddProduct";
 import {EmployeeList} from "../../EmployeeArea/EmployeeList/EmployeeList.tsx";
 import {EditProduct} from "../../ProductArea/EditProduct/EditProduct.tsx";
 import {lazy, Suspense} from "react";
+import {TotalProducts} from "../../ProductArea/TotalProducts/TotalProducts.tsx";
 
 
 export function Routing() {
@@ -26,6 +27,7 @@ export function Routing() {
                 <Route path="/products/:id" element={<ProductDetails/>}/>
                 <Route path="/products/new" element={<AddProduct/>}/>
                 <Route path="/about" element={<About/>}/>
+                <Route path="products/total" element={<TotalProducts/>}/>
                 <Route path="/products/edit/:id" element={<EditProduct/>}/>
                 <Route path="/contact-us" element={SuspenseContactUs}/>
                 <Route path="*" element={<Page404/>}/>

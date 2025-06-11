@@ -1,10 +1,11 @@
-.EditProduct > form > img {
-    border: 1px solid;
-    width: 80px;
-    height: 80px;
-    display: block;
-    margin: 10px auto;
+.EditProduct {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+
 }
-.EditProduct  form input:not([type="file"]){
-    color: gray;
+
+.EditProduct > form > * {
+    margin: 10px auto;
+
 }
