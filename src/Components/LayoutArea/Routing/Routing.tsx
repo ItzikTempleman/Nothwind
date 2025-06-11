@@ -10,6 +10,9 @@ import {EmployeeList} from "../../EmployeeArea/EmployeeList/EmployeeList.tsx";
 import {EditProduct} from "../../ProductArea/EditProduct/EditProduct.tsx";
 import {lazy, Suspense} from "react";
 import {TotalProducts} from "../../ProductArea/TotalProducts/TotalProducts.tsx";
+import {EditEmployee} from "../../EmployeeArea/EditEmployee/EditEmployee.tsx";
+import {AddEmployee} from "../../EmployeeArea/AddEmployee/AddEmployee.tsx";
+import {EmployeeDetails} from "../../EmployeeArea/EmployeeDetails/EmployeeDetails.tsx";
 
 
 export function Routing() {
@@ -20,17 +23,25 @@ export function Routing() {
     return (
         <div className="Routing">
             <Routes>
+
                 <Route path="/" element={<Navigate to="/home"/>}/>
                 <Route path="/home" element={<Home/>}/>
-                <Route path="/products" element={<ProductList/>}/>
-                <Route path="/employees" element={<EmployeeList/>}/>
-                <Route path="/products/:id" element={<ProductDetails/>}/>
-                <Route path="/products/new" element={<AddProduct/>}/>
                 <Route path="/about" element={<About/>}/>
-                <Route path="products/total" element={<TotalProducts/>}/>
-                <Route path="/products/edit/:id" element={<EditProduct/>}/>
                 <Route path="/contact-us" element={SuspenseContactUs}/>
                 <Route path="*" element={<Page404/>}/>
+
+                <Route path="/products/total" element={<TotalProducts/>}/>
+
+                <Route path="/products/new" element={<AddProduct/>}/>
+                <Route path="/products" element={<ProductList/>}/>
+                <Route path="/products/:id" element={<ProductDetails/>}/>
+                <Route path="/products/edit/:id" element={<EditProduct/>}/>
+
+                <Route path="/employees/new" element={<AddEmployee/>}/>
+                <Route path="/employees" element={<EmployeeList/>}/>
+                <Route path="/employees/:id" element={<EmployeeDetails/>}/>
+                <Route path="/employees/edit/:id" element={<EditEmployee/>}/>
+
             </Routes>
         </div>
     );

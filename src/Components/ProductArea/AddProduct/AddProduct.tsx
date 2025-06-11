@@ -38,7 +38,7 @@ export function AddProduct() {
                 <TextField type="file" fullWidth inputProps={{ accept: "image/*" }} {...register("image")}/>
 
 
-                <Button color="primary" variant="contained">Add</Button>
+                <Button color="primary" fullWidth  variant="contained">Add</Button>
 
             </form>
 

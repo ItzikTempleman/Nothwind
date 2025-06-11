@@ -2,9 +2,11 @@
 import type {ProductModel} from "../Models/ProductModel.ts";
 import {configureStore} from "@reduxjs/toolkit";
 import {productSlice} from "./ProductSlice.ts";
+import type {EmployeeModel} from "../Models/EmployeeModel.ts";
 
 export type AppState={
     products:ProductModel[],
+    employees:EmployeeModel[]
 };
 
 //Store - The main redux object handling it all:
@@ -12,7 +14,8 @@ export type AppState={
 export const store=configureStore<AppState>(
     {
         reducer:{
-            products:productSlice.reducer
+            products:productSlice.reducer,
+            employees:productSlice.reducer
         }
     }
 )
