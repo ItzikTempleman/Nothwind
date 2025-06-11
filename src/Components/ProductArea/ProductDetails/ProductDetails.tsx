@@ -27,7 +27,7 @@ useTitle("Details")
             await productService.deleteProduct(id)
             notify.success("product has been deleted")
             navigate("/products")
-        }  catch (err: any){
+        }  catch (err: unknown){
             notify.error(err);
         }
     }

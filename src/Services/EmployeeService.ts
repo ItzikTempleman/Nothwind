@@ -5,8 +5,7 @@ import type {EmployeeModel} from "../Models/EmployeeModel.ts";
 class EmployeeService {
     public async getAllEmployees(): Promise<EmployeeModel[]> {
         const response = await axios.get<EmployeeModel[]>(appConfig.employeesUrl);
-        const employees = response.data;
-        return employees;
+        return response.data;
     }
 }
 

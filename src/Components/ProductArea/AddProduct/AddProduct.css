@@ -6,7 +6,6 @@
 }
 
 .AddProduct > form > * {
+    margin: 10px auto;
 
-margin:10px auto;
-    background-color: white;
 }

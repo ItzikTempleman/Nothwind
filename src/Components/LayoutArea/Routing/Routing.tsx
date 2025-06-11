@@ -26,7 +26,7 @@ export function Routing() {
                 <Route path="/products/:id" element={<ProductDetails/>}/>
                 <Route path="/products/new" element={<AddProduct/>}/>
                 <Route path="/about" element={<About/>}/>
-                <Route path="products/edit/:id" element={<EditProduct/>}/>
+                <Route path="/products/edit/:id" element={<EditProduct/>}/>
                 <Route path="/contact-us" element={SuspenseContactUs}/>
                 <Route path="*" element={<Page404/>}/>
             </Routes>

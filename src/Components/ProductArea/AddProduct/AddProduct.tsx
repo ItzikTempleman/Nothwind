@@ -19,7 +19,7 @@ export function AddProduct() {
             await productService.addProduct(product);
             notify.success("Product has been added.");
             navigate("/products")
-        } catch (err: any) {
+        } catch (err: unknown) {
             notify.error(err);
         }
     }
@@ -38,7 +38,7 @@ export function AddProduct() {
                 <TextField type="file" fullWidth inputProps={{ accept: "image/*" }} {...register("image")}/>
 
 
-                <Button color="primary">Add</Button>
+                <Button color="primary" variant="contained">Add</Button>
 
             </form>
 
