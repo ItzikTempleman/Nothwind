@@ -3,6 +3,7 @@ import {ProductModel} from "../Models/ProductModel";
 import {appConfig} from "../Utils/AppConfig";
 import {store} from "../Redux/Store";
 import {productSlice} from "../Redux/ProductSlice";
+import {notify} from "../Utils/Notify.ts";
 
 class ProductService {
 
@@ -23,38 +24,31 @@ class ProductService {
         // const type: string = "productSlice/initProducts";
         // const action: PayloadAction<ProductModel[]> = { payload, type };
         // store.dispatch(action);
-
         // // Same:
         // const action = productSlice.actions.initProducts(products);
         // store.dispatch(action);
 
         // Same:
         store.dispatch(productSlice.actions.initProducts(products));
-
         // Return products:
         return products;
     }
 
     // Get one product from backend:
     public async getOneProduct(id: number): Promise<ProductModel> {
-
         // If product exists in our global state:
         const product = store.getState().products.find(p => p.id === id);
         if (product) return product;
-
         // Get one product:
         const response = await axios.get<ProductModel>(appConfig.productsUrl + id);
-
         // Extract product:
         const dbproduct = response.data;
-
         // Return product:
         return dbproduct;
     }
 
     // Add product:
     public async addProduct(product: ProductModel): Promise<void> {
-
         // Tells axios to send data + files:
         const options: AxiosRequestConfig = {
             headers: {
@@ -76,22 +70,24 @@ class ProductService {
 
     // Update product:
     public async updateProduct(product: ProductModel): Promise<void> {
-
         // Tells axios to send data + files:
         const options: AxiosRequestConfig = {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
         };
+        try {
+            // Send product to backend:
+            const response = await axios.put<ProductModel>(appConfig.productsUrl + product.id, product, options);
+            // Extract db product:
+            const dbProduct = response.data;
+            // Save updated product also in the global state
+            store.dispatch(productSlice.actions.updateProduct(dbProduct));
 
-        // Send product to backend:
-        const response = await axios.put<ProductModel>(appConfig.productsUrl + product.id, product, options);
+        } catch (err: unknown) {
+            notify.error(err)
+        }
 
-        // Extract db product:
-        const dbProduct = response.data;
-
-        // Save updated product also in the global state
-        store.dispatch(productSlice.actions.updateProduct(dbProduct));
     }
 
     // Delete product:
