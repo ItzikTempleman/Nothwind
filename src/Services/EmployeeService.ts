@@ -8,7 +8,7 @@ import {employeeSplice} from "../Redux/EmployeeSplice.ts";
 class EmployeeService {
 
     public async getAllEmployees(): Promise<EmployeeModel[]> {
-        if (store.getState().employees.length>0) return store.getState().products;
+        //if (store.getState().employees.length>0) return store.getState().employees;
         const response = await axios.get<EmployeeModel[]>(appConfig.employeesUrl);
         const employees=response.data
         store.dispatch(employeeSplice.actions.initEmployees(employees))
@@ -42,19 +42,14 @@ class EmployeeService {
 
         try{
             await axios.put<EmployeeModel>(appConfig.employeesUrl +employee.id, employee, options);
-        }catch (err){
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error
+        }catch (err: any) {
             console.log(err.message)
         }
     }
 
-
-
     public async deleteEmployee(id:number):Promise<void>{
         await axios.delete(appConfig.employeesUrl+id)
     }
-
 }
 
 export const employeeService = new EmployeeService();

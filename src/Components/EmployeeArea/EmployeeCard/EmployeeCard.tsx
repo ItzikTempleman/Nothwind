@@ -1,5 +1,6 @@
 import "./EmployeeCard.css";
 import type {EmployeeModel} from "../../../Models/EmployeeModel.ts";
+import {useNavigate} from "react-router-dom";
 
 
 type EmployeeCardProps = {
@@ -7,33 +8,35 @@ type EmployeeCardProps = {
 };
 
 
+
 export function EmployeeCard(props: EmployeeCardProps) {
+    const navigate = useNavigate()
+
+    function navigateToEmployeeDetails() {
+        navigate("/employees/"+props.employee.id)
+    }
+
 
     return (
-        <div className="EmployeeCard">
-            <br/>
+        <div className="EmployeeCard" onClick={navigateToEmployeeDetails}>
             <div>
-            <span>Name: {props.employee.firstName} </span>
-            <span>{props.employee.lastName}</span>
+                <span>
+                    {props.employee.firstName}
+                     {props.employee.lastName}
+                </span>
+                <span>Title: {props.employee.title}</span>
+
+                <span>Address location:</span>
+                <span>
+                       {props.employee.city},
+                    {props.employee.country}
+                </span>
+
+                <span>Birth date: {props.employee.birthDate} </span>
             </div>
-            <br/>
             <div>
-            <span>Position title: {props.employee.title}</span>
+                <img src={props.employee.imageUrl}/>
             </div>
-            <br/>
-            <div>
-                <span>City: {props.employee.city}, </span>
-                <span>{props.employee.country}</span>
-            </div>
-            <br/>
-            <div>
-                <span>Birthday: {props.employee.birthDate}</span>
-            </div>
-            <br/>
-            <div>
-                <img src={props.employee.imageUrl} alt={props.employee.imageUrl}/>
-            </div>
-            <hr/>
         </div>
     );
 }

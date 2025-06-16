@@ -1,3 +1,32 @@
 .AddEmployee {
-	
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 30px;
 }
+
+.AddEmployee > form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.NameField, .AddressField{
+    display: flex;
+    gap: 10px;
+}
+
+.NameField .MuiTextField-root,
+.AddressField .MuiTextField-root {
+    flex: 1;
+}
+/*input[type="date"]::-webkit-datetime-edit-text,*/
+/*input[type="date"]::-webkit-datetime-edit-month-field,*/
+/*input[type="date"]::-webkit-datetime-edit-day-field,*/
+/*input[type="date"]::-webkit-datetime-edit-year-field {*/
+/*    color: gray;*/
+/*}*/

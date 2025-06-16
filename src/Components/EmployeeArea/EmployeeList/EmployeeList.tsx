@@ -12,14 +12,15 @@ export function EmployeeList() {
 
     useEffect(() => {
         employeeService.getAllEmployees()
-            .then(dbEmployee=>
-                setEmployees(dbEmployee)
+            .then(dbEmployees=>
+                setEmployees(dbEmployees)
             ).catch(err=>  notify.error(err));
     }, []);
 
 
     return (
         <div className="EmployeeList">
+            <h4>Employees</h4>
             {
                 employees.map(e => <EmployeeCard key={e.id} employee={e}/>)
             }

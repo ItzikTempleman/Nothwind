@@ -12,12 +12,12 @@ export function ProductCard(props: ProductCardProps) {
     const navigate = useNavigate()
 
 
-    function navigateToDetails() {
+    function navigateToProductDetails() {
         navigate("/products/"+props.product.id)
     }
 
     return (
-        <div className="ProductCard" onClick={navigateToDetails}>
+        <div className="ProductCard" onClick={navigateToProductDetails}>
             <div>
                 <span>{props.product.name}</span>
                 <span>Price: {props.product.price}</span>

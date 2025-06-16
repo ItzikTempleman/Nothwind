@@ -1,21 +1,22 @@
 .ProductCard {
-    width: 200px;
+    width: 260px;
+    height: 160px;
     display: inline-flex;
     text-align: left;
     background-color: white;
-    margin: 10px;
+    margin: 4px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
+    border-radius: 4px;
 
     cursor: pointer;
 }
 
 .ProductCard img {
-    width: 60px;
-    height: 60px;
-    border: 1px solid black;
-    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    border-radius: 180px;
     vertical-align: middle;
 }
 

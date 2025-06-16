@@ -1,8 +1,15 @@
-.ContactUs > form{
-	width: 400px;
-    background-color: white;
+.ContactUs {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 30px;
 }
 
-.ContactUs > form>*{
-    margin-bottom: 20px;
+.ContactUs > form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

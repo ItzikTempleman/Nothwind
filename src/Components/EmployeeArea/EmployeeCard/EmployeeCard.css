@@ -1,4 +1,29 @@
+.EmployeeCard {
+    width: 260px;
+    height: 160px;
+    display: inline-flex;
+    text-align: left;
+    background-color: white;
+    margin: 4px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
 .EmployeeCard img {
-	width:200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+    border-radius: 180px;
+    vertical-align: middle;
+}
+
+.EmployeeCard>div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.EmployeeCard>div:last-child {
+    margin-left: auto;
 }

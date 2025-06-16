@@ -33,7 +33,7 @@ export function EditProduct() {
             product.id = id
             await productService.updateProduct(product);
             notify.success("Product has been updated");
-            navigate("/products/" + product.id);
+            navigate("/products/");
         } catch (err: unknown) {
             notify.error(err);
         }
@@ -76,7 +76,7 @@ export function EditProduct() {
 
 
 
-                <img src={image}/>
+                <img className="imagePreview" src={image}/>
 
 
                 <TextField
@@ -110,24 +110,3 @@ export function EditProduct() {
         </div>
     );
 }
-
-
-//            {/*<form onSubmit={handleSubmit(send)}>*/}
-//
-//             {/*    <label>Name: </label>*/}
-//             {/*    <input type="text" {...register("name")} required minLength={2} maxLength={100}/>*/}
-//
-//             {/*    <label>Price: </label>*/}
-//             {/*    <input type="number" step="0.01" {...register("price")} required minLength={0} maxLength={100}/>*/}
-//
-//             {/*    <label>Stock: </label>*/}
-//             {/*    <input type="number" {...register("stock")} required minLength={0} maxLength={100}/>*/}
-//
-//             {/*    <label>Image: </label>*/}
-//             {/*    <input type="file" accept="image/*" {...register("image")}/>*/}
-//
-//             {/*    <img src={image}/>*/}
-//
-//             {/*    <button type="submit" disabled={!isValid}>Update</button>*/}
-//
-//             {/*</form>*/}

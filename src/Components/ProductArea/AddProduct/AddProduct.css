@@ -1,10 +1,15 @@
 .AddProduct {
     height: 100vh;
-    width: 100%;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 30px;
 }
 
-.AddProduct > form > * {
-    margin: 10px auto;
-
+.AddProduct > form {
+    width: 70%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

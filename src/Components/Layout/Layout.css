@@ -3,7 +3,7 @@
     box-sizing: border-box;
     display: grid;
     grid-template-rows: 10% 80% 10%;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 15% 85%;
 }
 
 .Layout>h1,h2,h3,h4,h5,h6,p,a {
@@ -15,9 +15,13 @@ header, footer {
 }
 
 header, aside, main, footer{
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    border: solid 0.5px;
     border-radius: 5px;
     padding: 2px;
     margin: 2px;
 }
 
+main {
+    overflow: auto;
+    height: 100%;
+}

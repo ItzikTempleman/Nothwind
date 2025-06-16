@@ -9,7 +9,7 @@ import {useTitle} from "../../../Utils/UseTitle.ts";
 
 
 export function ProductDetails() {
-useTitle("Details")
+useTitle("Product details")
     const params = useParams();
     const id = +params.id!;
     const [product, setProduct] = useState<ProductModel>()
