@@ -27,7 +27,7 @@ export function UserMenu() {
 
             {
                 user?.id && <div>
-                    <span>Hello {user.firstName} {user.lastName} </span>
+                    <span>Hello {user.firstName} {user.lastName} | </span>
                     <NavLink to="#" onClick={logout}>Logout</NavLink>
                 </div>
             }

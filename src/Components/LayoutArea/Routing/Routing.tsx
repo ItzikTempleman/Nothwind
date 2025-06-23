@@ -15,6 +15,7 @@ import {AddEmployee} from "../../EmployeeArea/AddEmployee/AddEmployee.tsx";
 import {EmployeeDetails} from "../../EmployeeArea/EmployeeDetails/EmployeeDetails.tsx";
 import {Register} from "../../UserArea/Register/Register.tsx";
 import {Login} from "../../UserArea/Login/Login.tsx";
+import {Admin} from "../../AdminArea/Admin/Admin.tsx";
 
 
 export function Routing() {
@@ -47,6 +48,7 @@ export function Routing() {
 
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/login" element={<Login/>}/>
+                <Route path="/admin" element={<Admin/>}/>
             </Routes>
         </div>
     );

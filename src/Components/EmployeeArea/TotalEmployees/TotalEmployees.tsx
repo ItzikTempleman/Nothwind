@@ -9,7 +9,7 @@ export function TotalEmployees() {
 
     return (
         <div className="TotalEmployees">
-            <span>Total Employees: {count}</span>
+            <p>{count} Employees</p>
         </div>
     );
 }
