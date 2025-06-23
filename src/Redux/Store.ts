@@ -10,7 +10,7 @@ import {userSlice} from "./UserSlice.ts";
 export type AppState={
     products:ProductModel[],
     employees:EmployeeModel[],
-    users: UserModel
+    user: UserModel
 };
 
 
@@ -20,7 +20,7 @@ export const store=configureStore<AppState>(
         reducer:{
             products:productSlice.reducer,
             employees:employeeSplice.reducer,
-            users: userSlice.reducer
+            user: userSlice.reducer
         }
     }
 )

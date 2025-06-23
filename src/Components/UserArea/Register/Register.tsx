@@ -9,39 +9,39 @@ export function Register() {
 
     const {register, handleSubmit} = useForm<UserModel>()
     const navigate = useNavigate();
-async function send(user:UserModel){
-        try{
+
+    async function send(user: UserModel) {
+        try {
             await userService.register(user)
             navigate("/home");
             notify.success("Welcome")
-        }catch (err:any){
+        } catch (err: any) {
             notify.error(err)
         }
-
-}
+    }
 
     return (
         <div className="Register">
 
-	<form onSubmit={handleSubmit(send)}>
-        <label>First name:
-        </label>
-        <input type="text" {...register("firstName")}/>
+            <form onSubmit={handleSubmit(send)}>
+                <label>First name:
+                </label>
+                <input type="text" {...register("firstName")}/>
 
-        <label>Family name:
-        </label>
-        <input type="text" {...register("lastName")}/>
+                <label>Family name:
+                </label>
+                <input type="text" {...register("lastName")}/>
 
-        <label>Enter email:
-        </label>
-        <input type="email" {...register("email")}/>
+                <label>Enter email:
+                </label>
+                <input type="email" {...register("email")}/>
 
-        <label>Enter password:
-        </label>
-        <input type="password" {...register("password")}/>
+                <label>Enter password:
+                </label>
+                <input type="password" {...register("password")}/>
 
-        <button type="submit">Register</button>
-    </form>
+                <button type="submit">Register</button>
+            </form>
 
         </div>
     );

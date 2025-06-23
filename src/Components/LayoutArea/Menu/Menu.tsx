@@ -15,6 +15,9 @@ export function Menu() {
             <hr className="menu-divider" />
             <NavLink to="/about"  className="nav-link">About</NavLink>
             <NavLink to="/contact-us"  className="nav-link">Contact us</NavLink>
+
+            <hr className="menu-divider" />
+            <NavLink to="/register"  className="nav-link">Register</NavLink>
         </div>
     );
 }

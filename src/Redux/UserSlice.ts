@@ -9,7 +9,6 @@ function initUser(_: UserModel[], payloadAction: PayloadAction<UserModel[]>) {
 function logoutUser(_: UserModel, _action: PayloadAction): UserModel | null {
     return null;
 }
-
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 export const userSlice = createSlice<UserModel>({

@@ -5,7 +5,6 @@ export function Home() {
     useTitle("Home")
     return (
         <div className="Home">
-			<p>Home</p>
 
         </div>
     );
