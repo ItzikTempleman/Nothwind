@@ -9,7 +9,7 @@ import {AddProduct} from "../../ProductArea/AddProduct/AddProduct";
 import {EmployeeList} from "../../EmployeeArea/EmployeeList/EmployeeList.tsx";
 import {EditProduct} from "../../ProductArea/EditProduct/EditProduct.tsx";
 import {lazy, Suspense} from "react";
-import {TotalProducts} from "../../ProductArea/TotalProducts/TotalProducts.tsx";
+import {TotalEmployees} from "../../EmployeeArea/TotalEmployees/TotalEmployees.tsx";
 import {EditEmployee} from "../../EmployeeArea/EditEmployee/EditEmployee.tsx";
 import {AddEmployee} from "../../EmployeeArea/AddEmployee/AddEmployee.tsx";
 import {EmployeeDetails} from "../../EmployeeArea/EmployeeDetails/EmployeeDetails.tsx";
@@ -30,7 +30,7 @@ export function Routing() {
                 <Route path="/contact-us" element={SuspenseContactUs}/>
                 <Route path="*" element={<Page404/>}/>
 
-                <Route path="/products/total" element={<TotalProducts/>}/>
+                <Route path="/products/total" element={<TotalEmployees/>}/>
 
                 <Route path="/products/new" element={<AddProduct/>}/>
                 <Route path="/products" element={<ProductList/>}/>

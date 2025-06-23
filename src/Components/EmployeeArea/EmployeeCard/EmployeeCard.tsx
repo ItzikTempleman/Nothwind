@@ -21,8 +21,7 @@ export function EmployeeCard(props: EmployeeCardProps) {
         <div className="EmployeeCard" onClick={navigateToEmployeeDetails}>
             <div>
                 <span>
-                    {props.employee.firstName}
-                     {props.employee.lastName}
+                    {props.employee.firstName} {props.employee.lastName}
                 </span>
                 <span>Title: {props.employee.title}</span>
 

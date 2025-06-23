@@ -10,7 +10,7 @@ export type AppState={
     employees:EmployeeModel[]
 };
 
-//Store - The main redux object handling it all:
+
 
 export const store=configureStore<AppState>(
     {

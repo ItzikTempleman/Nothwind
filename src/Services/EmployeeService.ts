@@ -3,7 +3,6 @@ import {appConfig} from "../Utils/AppConfig.ts";
 import type {EmployeeModel} from "../Models/EmployeeModel.ts";
 import {store} from "../Redux/Store.ts";
 import {employeeSplice} from "../Redux/EmployeeSplice.ts";
-import {productSlice} from "../Redux/ProductSlice.ts";
 import {notify} from "../Utils/Notify.ts";
 
 
@@ -30,8 +29,8 @@ class EmployeeService {
     public async addEmployee(employee: EmployeeModel): Promise<void> {
         const options: AxiosRequestConfig = {headers: {"Content-Type": "multipart/form-data"}}
         const response = await axios.post<EmployeeModel>(appConfig.employeesUrl, employee, options)
-        const dbProduct = response.data
-        store.dispatch(employeeSplice.actions.addEmployee(dbProduct))
+        const employeeToAdd = response.data
+        store.dispatch(employeeSplice.actions.addEmployee(employeeToAdd))
     }
 
 
@@ -44,15 +43,17 @@ class EmployeeService {
 
         try {
             const response = await axios.put<EmployeeModel>(appConfig.employeesUrl + employee.id, employee, options);
-            const dbProduct = response.data;
-            store.dispatch(productSlice.actions.updateProduct(dbProduct));
+            const dbEmployee = response.data;
+            store.dispatch(employeeSplice.actions.updateEmployee(dbEmployee));
         } catch (err: unknown) {
             notify.error(err)
         }
     }
 
     public async deleteEmployee(id: number): Promise<void> {
-        await axios.delete(appConfig.employeesUrl + id)
+        const employeeToDeleteResponse= await axios.delete(appConfig.employeesUrl + id)
+        const dbEmployee = employeeToDeleteResponse.data;
+        store.dispatch(employeeSplice.actions.deleteEmployee(dbEmployee));
     }
 }
 
