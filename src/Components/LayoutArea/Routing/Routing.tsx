@@ -13,6 +13,7 @@ import {TotalEmployees} from "../../EmployeeArea/TotalEmployees/TotalEmployees.t
 import {EditEmployee} from "../../EmployeeArea/EditEmployee/EditEmployee.tsx";
 import {AddEmployee} from "../../EmployeeArea/AddEmployee/AddEmployee.tsx";
 import {EmployeeDetails} from "../../EmployeeArea/EmployeeDetails/EmployeeDetails.tsx";
+import {Register} from "../../UserArea/Register/Register.tsx";
 
 
 export function Routing() {
@@ -42,6 +43,8 @@ export function Routing() {
                 <Route path="/employees/:id" element={<EmployeeDetails/>}/>
                 <Route path="/employees/edit/:id" element={<EditEmployee/>}/>
 
+
+                <Route path="/register" element={<Register/>}/>
             </Routes>
         </div>
     );
