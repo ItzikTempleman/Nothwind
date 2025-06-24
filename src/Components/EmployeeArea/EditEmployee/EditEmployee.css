@@ -3,9 +3,6 @@
     display: inline-block;
 }
 
-.EditEmployee >form>*{
-    margin: 20px;
-}
 
 img {
     width: 240px;
@@ -23,7 +20,7 @@ img {
     padding: 30px;
 }
 
-.EditEmployee >form>{
+.EditEmployee >form{
     width: 70%;
     max-width: 400px;
     display: flex;
@@ -31,5 +28,6 @@ img {
     gap: 10px;
 }
 .EditEmployee >form>*{
+    margin: 20px;
     padding: 10px;
 }
