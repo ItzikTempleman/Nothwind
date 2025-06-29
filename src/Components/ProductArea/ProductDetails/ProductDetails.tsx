@@ -15,16 +15,16 @@ export function ProductDetails() {
     const navigate = useNavigate()
     useEffect(() => {
         productService.getOneProduct(id)
-            .then(dbProducts => setProduct(dbProducts))
-            .catch(err => console.log(err.message));
+            .then(dbProduct => setProduct(dbProduct))
+            .catch(err => notify.error(err));
     }, [id])
 
-    async function deleteMe() {
+    async function deleteProduct() {
         try {
-            const sure = confirm("Are you sure?")
-            if (!sure) return
+            const areYouSure = confirm("Are you sure?")
+            if (!areYouSure) return
             await productService.deleteProduct(id)
-            notify.success("product has been deleted")
+            notify.success("Product has been deleted")
             navigate("/products")
         } catch (err: unknown) {
             notify.error(err);
@@ -37,14 +37,14 @@ export function ProductDetails() {
             <h3>{product?.name}</h3>
             <h3>Price: {product?.price}</h3>
             <h3>Stock: {product?.stock}</h3>
-            <img src={product?.imageUrl} alt={product?.imageUrl}/>
+            <img src={product?.imageUrl}/>
             <br/>
             <br/>
             <NavLink to="/products"> Back</NavLink>
             <span> | </span>
             <NavLink to={"/products/edit/" + product?.id}> Edit</NavLink>
             <span> | </span>
-            <NavLink to="#" onClick={deleteMe}>Delete</NavLink>
+            <NavLink to="#" onClick={deleteProduct}>Delete</NavLink>
         </div>
     );
 }
