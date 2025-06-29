@@ -25,12 +25,12 @@ export function EditProduct() {
                 setImage(dbProducts.imageUrl!);
             })
             .catch(err => console.log(err.message));
-    }, [])
+    }, []);
 
     async function send(product: ProductModel) {
         try {
             product.image = (product.image as unknown as FileList)[0];
-            product.id = id
+            product.id = id;
             await productService.updateProduct(product);
             notify.success("Product has been updated");
             navigate("/products/");
@@ -74,10 +74,7 @@ export function EditProduct() {
                         ...register("stock")
                     }/>
 
-
-
                 <img className="imagePreview" src={image}/>
-
 
                 <TextField
                     variant="standard"
@@ -97,7 +94,8 @@ export function EditProduct() {
                             setImage(URL.createObjectURL(file));
                         }
                     }
-                    }/>
+                    }
+                />
 
                 <Button
                     type="submit"

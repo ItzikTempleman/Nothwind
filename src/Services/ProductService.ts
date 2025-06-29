@@ -65,7 +65,7 @@ class ProductService {
         // const dbProduct = response.data;
 
         // Save added product also in the global state:
-        //store.dispatch(productSlice.actions.addProduct(dbProduct));
+        store.dispatch(productSlice.actions.addProduct(dbProduct));
     }
 
     // Update product:

@@ -1,4 +1,4 @@
-.Layout {
+.MainLayout {
     height: 100vh;
     box-sizing: border-box;
     display: grid;
@@ -6,7 +6,7 @@
     grid-template-columns: 15% 85%;
 }
 
-.Layout>h1,h2,h3,h4,h5,h6,p,a {
+.MainLayout>h1,h2,h3,h4,h5,h6,p,a {
     font-family: Arial;
 }
 

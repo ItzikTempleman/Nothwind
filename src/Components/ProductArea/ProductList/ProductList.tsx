@@ -4,6 +4,7 @@ import {ProductModel} from "../../../Models/ProductModel"
 import {useEffect, useState} from "react";
 import {ProductCard} from "../ProductCard/ProductCard.tsx";
 import {useTitle} from "../../../Utils/UseTitle.ts";
+import {notify} from "../../../Utils/Notify.ts";
 
 export function ProductList() {
     useTitle("Products")
@@ -14,18 +15,14 @@ export function ProductList() {
         productService.getAllProducts()
             .then(dbProducts => {
                     setProducts(dbProducts)
-                    console.log(dbProducts)
                 }
             )
-            .catch(err => console.log(err.message));
+            .catch(err => notify.error(err));
     }, []);
 
     return (
         <div className="ProductList">
-            {
-                products.map(p => <ProductCard key={p.id} product={p}/>)
-            };
-            {/*<NavLink to="products/total" className="nav-link">All products</NavLink>*/}
+            {products.map(p => <ProductCard key={p.id} product={p}/>)};
         </div>
 
     );

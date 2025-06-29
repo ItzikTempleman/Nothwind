@@ -27,7 +27,7 @@ function deleteEmployee(currentEmployeeState: EmployeeModel[], action: PayloadAc
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-export const employeeSplice = createSlice<EmployeeModel[]>(
+export const employeeSlice = createSlice<EmployeeModel[]>(
     {
         name: "employeeSlice",
         initialState: [],

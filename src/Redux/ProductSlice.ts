@@ -2,7 +2,7 @@ import type {ProductModel} from "../Models/ProductModel.ts";
 import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 
 function initProducts(_: ProductModel[], payloadAction: PayloadAction<ProductModel[]>) {
-    return payloadAction.payload
+    return payloadAction.payload;
 }
 
 //The entire data to handle in this slice is Northwind entire list of products. Therefore, we use an array

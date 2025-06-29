@@ -24,7 +24,7 @@ export function ProductCard(props: ProductCardProps) {
                 <span>Stock: {props.product.stock}</span>
             </div>
             <div>
-                <img src={props.product.imageUrl} alt={props.product.name}/>
+                <img src={props.product.imageUrl}/>
             </div>
         </div>
     );

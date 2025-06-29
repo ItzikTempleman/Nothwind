@@ -7,9 +7,8 @@ import {notify} from "../../../Utils/Notify.ts";
 import {useTitle} from "../../../Utils/UseTitle.ts";
 
 
-
 export function ProductDetails() {
-useTitle("Product details")
+    useTitle("Product details");
     const params = useParams();
     const id = +params.id!;
     const [product, setProduct] = useState<ProductModel>()
@@ -27,7 +26,7 @@ useTitle("Product details")
             await productService.deleteProduct(id)
             notify.success("product has been deleted")
             navigate("/products")
-        }  catch (err: unknown){
+        } catch (err: unknown) {
             notify.error(err);
         }
     }

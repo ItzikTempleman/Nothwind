@@ -2,7 +2,7 @@ import {createRoot} from 'react-dom/client'
 import './index.css'
 
 import {BrowserRouter} from 'react-router-dom'
-import {Layout} from "./Components/Layout/Layout.tsx";
+import {MainLayout} from "./Components/MainLayout/MainLayout.tsx";
 import {Provider} from "react-redux";
 import {store} from "./Redux/Store.ts";
 import {ThemeProvider} from "@mui/material";
@@ -18,7 +18,7 @@ createRoot(document.getElementById('root')!).render(
     <Provider store={store}>
         <BrowserRouter>
             <ThemeProvider theme={muiTheme}>
-            <Layout/>
+            <MainLayout/>
             </ThemeProvider>
         </BrowserRouter>
     </Provider>
